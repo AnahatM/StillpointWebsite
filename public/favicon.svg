@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" fill="#071019"/>
+  <!-- viewfinder corner brackets -->
+  <g fill="none" stroke="#46c7b6" stroke-width="4" stroke-linecap="square">
+    <path d="M12 22 V12 H22"/>
+    <path d="M42 12 H52 V22"/>
+    <path d="M52 42 V52 H42"/>
+    <path d="M22 52 H12 V42"/>
+  </g>
+  <!-- spine / posture line -->
+  <line x1="32" y1="20" x2="32" y2="44" stroke="#2fae9d" stroke-width="3" stroke-linecap="round"/>
+  <!-- the stillpoint -->
+  <circle cx="32" cy="32" r="6" fill="#46c7b6"/>
+  <circle cx="32" cy="32" r="11" fill="none" stroke="#46c7b6" stroke-width="1.5" opacity="0.5"/>
+</svg>
