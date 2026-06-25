@@ -89,49 +89,6 @@ npm run lint     # run ESLint
 └─ index.html                # SEO / meta / fonts
 ```
 
-## What to Replace (Placeholders)
-
-The GitHub repo/app URLs are already filled in (`AnahatM/Stillpoint`). Search the codebase for **`REPLACE_WITH_`** to find what's left.
-
-| Placeholder | Where | What to put |
-| --- | --- | --- |
-| `RELEASES_URL` / `DOWNLOADS.windows` | `src/lib/site.ts` | GitHub Releases page + the Windows `.exe` asset link. Stillpoint currently ships for **Windows only**; the macOS card is shown disabled/"coming later". |
-| `REPLACE_WITH_CONTACT_EMAIL` | `src/lib/site.ts` | Optional contact email |
-| `APP_VERSION` | `src/lib/site.ts` | Current release version label (e.g. `v1.0.0`) |
-| `DEVELOPER` | `src/lib/site.ts` | Developer name + portfolio + GitHub (pre-filled for Anahat Mudgal) |
-| `REPLACE_WITH_SITE_URL` | `index.html` | The site's public URL (canonical + OG/Twitter tags) |
-| `og-image.png` | `public/` | A 1200×630 social share image (referenced by OG/Twitter meta) |
-
-### Adding / updating screenshots
-
-1. Drop images into **`public/screenshots/`**.
-2. Pass the path to the matching `<ScreenshotFrame>`:
-
-   ```tsx
-   <ScreenshotFrame
-     label="Analytics"
-     src="/screenshots/Stillpoint-Screenshot_Analytics.png"
-     alt="Stillpoint analytics with the switchable trend chart"
-     ratio="16 / 10"
-   />
-   ```
-
-   Current wiring: **Hero** → camera/posture monitor; **Features** → Focus, Wellness, Settings. The **Analytics** card is still a labelled placeholder until that screenshot is added.
-
-## Deploying
-
-The build output in `/dist` is fully static. Pick any host:
-
-### Netlify / Vercel / Cloudflare Pages
-- **Build command:** `npm run build`
-- **Output / publish directory:** `dist`
-- No environment variables needed. Leave `base` as `'/'` in `vite.config.ts`.
-
-### GitHub Pages
-- For a **project site** (`username.github.io/your-repo`), set `base: '/your-repo/'` in `vite.config.ts`, then deploy `dist` (via GitHub Actions or the `gh-pages` branch).
-- For a **user/organization site** or a **custom domain**, keep `base: '/'`.
-- Add an empty `.nojekyll` file to `dist` so asset folders starting with `_` are served correctly.
-
 ## Author
 
 **Anahat Mudgal**
@@ -141,10 +98,10 @@ The build output in `/dist` is fully static. Pick any host:
 
 ## License
 
-This project is open source and available under the MIT License. Add a `LICENSE` file to formalize it.
+This project is open source and available under the MIT License.
 
 ---
 
 <div align="center">
-<sub>Made with on-device AI · Stillpoint</sub>
+<sub>Local and Open-Source · Stillpoint</sub>
 </div>
