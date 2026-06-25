@@ -14,6 +14,8 @@ interface ScreenshotFrameProps {
   ratio?: string
   /** Optional overlay (used by the hero to layer the skeleton animation). */
   children?: ReactNode
+  /** Load eagerly instead of lazily — use for above-the-fold images (the hero). */
+  eager?: boolean
   className?: string
 }
 
@@ -28,6 +30,7 @@ export function ScreenshotFrame({
   alt,
   ratio = '16 / 10',
   children,
+  eager = false,
   className = '',
 }: ScreenshotFrameProps) {
   return (
@@ -50,7 +53,8 @@ export function ScreenshotFrame({
             src={src}
             alt={alt ?? `Stillpoint ${label} screen`}
             className="h-full w-full object-cover"
-            loading="lazy"
+            loading={eager ? 'eager' : 'lazy'}
+            decoding="async"
           />
         ) : (
           <div className="bg-grid flex h-full w-full flex-col items-center justify-center gap-3 bg-navy-850 text-center">

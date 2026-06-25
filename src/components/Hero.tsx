@@ -1,6 +1,5 @@
 import { ButtonLink, Chip } from './ui/primitives'
 import { ScreenshotFrame } from './ui/ScreenshotFrame'
-import { SkeletonOverlay } from './ui/SkeletonOverlay'
 import { DownloadIcon, GithubIcon, ArrowIcon } from './icons'
 import { GITHUB_URL } from '../lib/site'
 
@@ -61,25 +60,20 @@ export function Hero() {
         {/* Visual column */}
         <div className="rise relative" style={{ animationDelay: '0.3s' }}>
           <div className="animate-float-slow">
-            <ScreenshotFrame label="Dashboard" ratio="16 / 11">
-              <SkeletonOverlay />
-            </ScreenshotFrame>
+            <ScreenshotFrame
+              label="Dashboard"
+              src="/screenshots/Stillpoint-Screenshot_CameraPostureMonitor.png"
+              alt="Stillpoint dashboard: camera posture monitor with streak, best, and a guided calibration coach"
+              ratio="16 / 11"
+              eager
+            />
           </div>
 
-          {/* Floating posture-score readout */}
-          <div className="absolute -bottom-6 -left-4 hidden border border-line-strong bg-navy-800/95 px-4 py-3 backdrop-blur-sm sm:block">
-            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-500">posture score</p>
-            <p className="mt-1 flex items-baseline gap-1">
-              <span className="text-3xl font-extrabold text-teal-300">92</span>
-              <span className="font-mono text-xs text-ink-400">/ 100</span>
-            </p>
-          </div>
-
-          {/* Floating streak readout */}
-          <div className="absolute -right-3 top-8 hidden border border-line-strong bg-navy-800/95 px-4 py-3 backdrop-blur-sm sm:block">
-            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-500">good streak</p>
-            <p className="mt-1 text-xl font-bold text-ink-100">
-              48<span className="ml-1 font-mono text-xs font-normal text-ink-400">min</span>
+          {/* Floating privacy badge — always true, reinforces the core message */}
+          <div className="absolute -bottom-5 -left-4 hidden items-center gap-2.5 border border-line-strong bg-navy-800/95 px-4 py-3 backdrop-blur-sm sm:flex">
+            <span className="h-2.5 w-2.5 animate-blink bg-teal-400" aria-hidden="true" />
+            <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-300">
+              on-device · 0 uploads
             </p>
           </div>
         </div>
