@@ -1,5 +1,6 @@
 import { Reveal } from './ui/Reveal'
 import { SectionLabel } from './ui/primitives'
+import { DotField } from './ui/DotField'
 import { TargetIcon, ScanIcon, SparkIcon } from './icons'
 
 const STEPS = [
@@ -29,7 +30,10 @@ const STEPS = [
 /** Three-step explainer of how the posture loop works. */
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative scroll-mt-24 border-t border-line py-24 sm:py-32">
+    <section id="how-it-works" className="relative scroll-mt-24 overflow-hidden border-t border-line py-24 sm:py-32">
+      <div className="bg-grid-fade pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+        <DotField gap={28} />
+      </div>
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
           <SectionLabel index="03">How it works</SectionLabel>

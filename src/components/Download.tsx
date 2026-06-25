@@ -1,6 +1,7 @@
 import { Reveal } from './ui/Reveal'
 import { SectionLabel } from './ui/primitives'
-import { WindowsIcon, AppleIcon, LinuxIcon, DownloadIcon, GithubIcon } from './icons'
+import { DotField } from './ui/DotField'
+import { WindowsIcon, AppleIcon, DownloadIcon, GithubIcon } from './icons'
 import { DOWNLOADS, RELEASES_URL, APP_VERSION } from '../lib/site'
 
 const PLATFORMS = [
@@ -18,20 +19,15 @@ const PLATFORMS = [
     req: 'macOS 12 Monterey or newer',
     href: DOWNLOADS.macos,
   },
-  {
-    name: 'Linux',
-    icon: LinuxIcon,
-    file: '.AppImage',
-    req: 'Most modern distributions',
-    href: DOWNLOADS.linux,
-  },
 ]
 
-/** Download section with three platform cards, requirements, and a signing note. */
+/** Download section with platform cards, requirements, and a signing note. */
 export function Download() {
   return (
-    <section id="download" className="relative scroll-mt-24 border-t border-line py-24 sm:py-32">
-      <div className="bg-grid bg-grid-fade pointer-events-none absolute inset-0 -z-10 opacity-40" aria-hidden="true" />
+    <section id="download" className="relative scroll-mt-24 overflow-hidden border-t border-line py-24 sm:py-32">
+      <div className="bg-grid-fade pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+        <DotField />
+      </div>
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
@@ -49,7 +45,7 @@ export function Download() {
           </div>
         </Reveal>
 
-        <div className="mt-14 grid gap-px bg-line md:grid-cols-3">
+        <div className="mx-auto mt-14 grid max-w-3xl gap-px bg-line sm:grid-cols-2">
           {PLATFORMS.map((p, i) => (
             <Reveal key={p.name} delay={i * 80}>
               <div className="group flex h-full flex-col items-center bg-navy-850 p-8 text-center transition-colors duration-300 hover:bg-navy-800">
@@ -93,7 +89,7 @@ export function Download() {
                 System requirements
               </h3>
               <ul className="mt-4 space-y-2.5 text-sm text-ink-300">
-                <li>· Windows 10/11, macOS 12+, or a modern Linux distribution</li>
+                <li>· Windows 10/11 (64-bit) or macOS 12 Monterey and newer</li>
                 <li>· A built-in or external webcam</li>
                 <li>· No dedicated GPU required — inference runs on the CPU</li>
                 <li>· Works fully offline once installed</li>

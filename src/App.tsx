@@ -8,11 +8,15 @@ import { Download } from './components/Download'
 import { FAQ } from './components/FAQ'
 import { OpenSource } from './components/OpenSource'
 import { Footer } from './components/Footer'
+import { PointerAura } from './components/ui/PointerAura'
 
 /** Single-page Stillpoint marketing site. */
 function App() {
   return (
     <>
+      {/* Cursor-following glow across the whole page */}
+      <PointerAura />
+
       {/* Accessibility: skip straight to content with the keyboard */}
       <a
         href="#main"

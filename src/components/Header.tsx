@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Logo } from './ui/Logo'
 import { ButtonLink } from './ui/primitives'
-import { DownloadIcon } from './icons'
+import { DownloadIcon, GithubIcon } from './icons'
+import { GITHUB_URL } from '../lib/site'
 
 const NAV_LINKS = [
   { label: 'Features', href: '#features' },
@@ -55,7 +56,16 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-2 md:flex">
+          <a
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Stillpoint on GitHub"
+            className="flex h-10 w-10 items-center justify-center border border-line text-ink-200 transition-colors hover:border-teal-400 hover:text-teal-300"
+          >
+            <GithubIcon className="h-5 w-5" />
+          </a>
           <ButtonLink href="#download" variant="primary">
             <DownloadIcon className="h-4 w-4" />
             Download

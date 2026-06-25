@@ -1,15 +1,16 @@
 /**
  * Central site configuration.
  *
- * This is the ONE place to plug in real values after the project is published.
- * Search for "REPLACE_WITH_" to find every placeholder that needs updating.
+ * This is the ONE place to plug in real values. The GitHub links are live;
+ * the per-platform download links currently point at the Releases page — swap
+ * them for specific asset URLs once a release is published.
  */
 
 /** The public GitHub repository for Stillpoint. */
-export const GITHUB_URL = 'REPLACE_WITH_GITHUB_URL'
+export const GITHUB_URL = 'https://github.com/AnahatM/Stillpoint'
 
 /** GitHub Releases page (the "all downloads" link). */
-export const RELEASES_URL = 'REPLACE_WITH_GITHUB_RELEASE_URL'
+export const RELEASES_URL = 'https://github.com/AnahatM/Stillpoint/releases'
 
 /** Optional contact address shown in the footer. */
 export const CONTACT_EMAIL = 'REPLACE_WITH_CONTACT_EMAIL'
@@ -19,13 +20,16 @@ export const DEVELOPER = {
   name: 'Anahat Mudgal',
   portfolio: 'https://anahatmudgal.com',
   github: 'https://github.com/AnahatM',
+  avatar: 'https://avatars.githubusercontent.com/u/61635745?v=4',
 } as const
 
-/** Per-platform download links. Point these at specific release assets. */
+/**
+ * Per-platform download links. These point at the Releases page for now;
+ * replace each with the specific asset URL once a build is published.
+ */
 export const DOWNLOADS = {
-  windows: 'REPLACE_WITH_GITHUB_RELEASE_URL', // Stillpoint-Setup-x.y.z.exe
-  macos: 'REPLACE_WITH_GITHUB_RELEASE_URL', //   Stillpoint-x.y.z.dmg
-  linux: 'REPLACE_WITH_GITHUB_RELEASE_URL', //   Stillpoint-x.y.z.AppImage
+  windows: 'https://github.com/AnahatM/Stillpoint/releases', // Stillpoint-Setup-x.y.z.exe
+  macos: 'https://github.com/AnahatM/Stillpoint/releases', //   Stillpoint-x.y.z.dmg
 } as const
 
 /** Current version label shown on the download cards. */

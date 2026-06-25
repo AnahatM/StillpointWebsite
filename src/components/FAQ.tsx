@@ -34,7 +34,7 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
   },
   {
     q: 'Which platforms are supported?',
-    a: 'Windows 10/11, macOS 12 or newer, and most modern Linux distributions — shipped as an .exe installer, a .dmg, and an .AppImage respectively.',
+    a: 'Windows 10/11 and macOS 12 or newer — shipped as an .exe installer and a .dmg respectively. (Stillpoint is open source, so it can also be built from source on other platforms.)',
   },
   {
     q: 'Why does my OS show a security warning on first run?',

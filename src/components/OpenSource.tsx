@@ -61,15 +61,14 @@ export function OpenSource() {
               <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-ink-500">Built by</p>
 
               <div className="mt-5 flex items-center gap-4">
-                <span
-                  className="flex h-14 w-14 shrink-0 items-center justify-center bg-teal-400 text-xl font-extrabold text-navy-950"
-                  aria-hidden="true"
-                >
-                  {DEVELOPER.name
-                    .split(' ')
-                    .map((w) => w[0])
-                    .join('')}
-                </span>
+                <img
+                  src={DEVELOPER.avatar}
+                  alt={DEVELOPER.name}
+                  width="56"
+                  height="56"
+                  loading="lazy"
+                  className="h-14 w-14 shrink-0 border border-line-strong object-cover"
+                />
                 <div>
                   <p className="text-xl font-bold text-ink-100">{DEVELOPER.name}</p>
                   <p className="font-mono text-[11px] uppercase tracking-wider text-teal-300">
