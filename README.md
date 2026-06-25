@@ -1,29 +1,53 @@
 <div align="center">
 
-# Stillpoint — Marketing Website
+# Stillpoint — Landing Page
 
-**Landing page for [Stillpoint](REPLACE_WITH_GITHUB_URL), a local-first desktop wellness &amp; productivity companion built around real-time, on-device posture coaching.**
+**The marketing site for [Stillpoint](REPLACE_WITH_GITHUB_URL) — a local-first desktop app that coaches your posture in real time, with nothing ever leaving your device.**
 
-Sit better. Focus deeper. Stay healthy at your desk.
+[![Vite](https://img.shields.io/badge/Vite-8-646cff?style=flat-square&logo=vite&logoColor=white)](https://vite.dev)
+[![React](https://img.shields.io/badge/React-19-61dafb?style=flat-square&logo=react&logoColor=black)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38bdf8?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](#license)
+[![Portfolio](https://img.shields.io/badge/Portfolio-anahatmudgal.com-796eb3?style=flat-square&logo=googlechrome&logoColor=white)](https://anahatmudgal.com)
+[![GitHub](https://img.shields.io/badge/GitHub-AnahatM-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/anahatm)
 
-`Vite` · `React` · `TypeScript` · `Tailwind CSS v4`
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Stillpoint-46c7b6?style=for-the-badge&logo=vercel&logoColor=white)](REPLACE_WITH_SITE_URL)
+[![Download App](https://img.shields.io/badge/Download_the_App-GitHub_Releases-181717?style=for-the-badge&logo=github&logoColor=white)](REPLACE_WITH_GITHUB_RELEASE_URL)
 
 </div>
 
 ---
 
-This repository contains **only the marketing website** — a fast, static, single-page site whose job is to explain Stillpoint and send visitors to the right download. It has no backend and builds to plain static files you can host anywhere.
+## About
 
-## ✨ Highlights
+This repository is the **marketing website** for Stillpoint — a single-page static site whose only job is to explain the app and send visitors to the right download. It has no backend and builds to plain static files you can host anywhere.
 
-- ⚡️ **Static & fast** — Vite + React, ships as static HTML/CSS/JS. No server required.
-- 🎨 **Distinctive design** — a dark "calibration instrument" aesthetic: deep navy, teal accent, sharp corners, viewfinder framing, and an animated pose-landmark hero.
-- 📱 **Fully responsive** — mobile → desktop, with a real mobile menu.
-- ♿️ **Accessible** — semantic landmarks, skip link, keyboard-friendly FAQ, visible focus rings, alt text, and `prefers-reduced-motion` support.
-- 🔍 **SEO-ready** — title, meta description, Open Graph & Twitter cards, theme color, and an SVG favicon.
-- 🪶 **Lightweight animations** — CSS keyframes + a tiny `IntersectionObserver` reveal hook. No animation libraries.
+The design leans into Stillpoint's identity: a dark "calibration instrument" aesthetic with deep navy surfaces, a teal accent, sharp corners, viewfinder framing that echoes the webcam/pose theme, and pointer-reactive touches — a cursor-following glow and a glowing ASCII field. It's fully responsive, accessible, SEO-ready, and animated entirely with CSS plus a tiny `IntersectionObserver` reveal hook — no animation libraries.
 
-## 🚀 Getting started
+![Vite](https://img.shields.io/badge/-Vite-05122A?style=flat-square&logo=Vite&color=2a2e34)
+![React](https://img.shields.io/badge/-React-05122A?style=flat-square&logo=React&color=2a2e34)
+![TypeScript](https://img.shields.io/badge/-TypeScript-05122A?style=flat-square&logo=TypeScript&color=2a2e34)
+![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-05122A?style=flat-square&logo=tailwindcss&color=2a2e34)
+
+## Screenshots
+
+> These are screenshots of the **Stillpoint desktop app** that the site showcases. Drop new captures in `public/screenshots/`.
+
+| ![Dashboard & posture monitor](public/screenshots/Stillpoint-Screenshot_CameraPostureMonitor.png) | ![Focus & to-do](public/screenshots/Stillpoint-Screenshot_FocusAndToDoPage.png) |
+| :-----------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------: |
+| ![Wellness reminders](public/screenshots/Stillpoint-Screenshot_WellnessReminders.png)             | ![Settings](public/screenshots/Stillpoint-Screenshot_SettingsPage.png)          |
+
+## Key Features
+
+- **Local-first design language** — a dark, teal-accented "calibration instrument" theme with sharp corners and viewfinder framing pulled straight from the app's identity.
+- **Animated, reactive hero** — a framed dashboard mockup with floating posture-score and streak readouts, over a cursor-following glow and a glowing, pointer-reactive ASCII field.
+- **Posture spotlight** — an illustrative live-monitor mock with an animated 0–100 score gauge, a contained scan line, and per-issue detection toggles.
+- **Zigzag feature showcase** — Focus, Wellness, Analytics and customization presented as angled, depth-stacked screenshots that straighten and lift on hover.
+- **Prominent privacy story** — a dedicated section making the on-device, zero-upload guarantee the centerpiece, reinforced by an open-source "inspect the code" callout.
+- **Built for shipping** — fully responsive, accessible (skip link, semantic landmarks, keyboard-friendly FAQ, visible focus rings, `prefers-reduced-motion`), and SEO-ready (title, meta description, Open Graph & Twitter cards, SVG favicon).
+
+## Getting Started
 
 > Requires **Node.js 18+** (Node 20+ recommended).
 
@@ -35,67 +59,67 @@ npm run preview  # preview the production build locally
 npm run lint     # run ESLint
 ```
 
-## 🗂 Project structure
+## Project Structure
 
 ```
 .
 ├─ public/
 │  ├─ favicon.svg            # Stillpoint mark (viewfinder + still-point node)
-│  └─ screenshots/           # ← drop real app screenshots here
+│  └─ screenshots/           # ← real app screenshots live here
 ├─ src/
 │  ├─ components/
 │  │  ├─ Header.tsx          # sticky nav + mobile menu
-│  │  ├─ Hero.tsx            # headline, CTAs, trust chips, animated mockup
+│  │  ├─ Hero.tsx            # headline, CTAs, trust chips, reactive mockup
 │  │  ├─ PostureSpotlight.tsx   # primary feature (posture monitoring)
-│  │  ├─ Features.tsx        # focus / wellness / analytics / themes / config
+│  │  ├─ Features.tsx        # zigzag showcase: focus / wellness / analytics / customization
 │  │  ├─ HowItWorks.tsx      # 3-step explainer
 │  │  ├─ Privacy.tsx         # local-first / privacy section
 │  │  ├─ Download.tsx        # platform cards + requirements + signing note
 │  │  ├─ FAQ.tsx             # accessible accordion
+│  │  ├─ OpenSource.tsx      # open-source callout + about the developer
 │  │  ├─ Footer.tsx
 │  │  ├─ icons/              # inline SVG icon set
-│  │  └─ ui/                 # Logo, buttons, ScreenshotFrame, overlays, etc.
-│  ├─ hooks/useReveal.ts     # scroll-reveal via IntersectionObserver
+│  │  └─ ui/                 # Logo, buttons, ScreenshotFrame, overlays, backdrops
+│  ├─ hooks/
+│  │  ├─ useReveal.ts        # scroll-reveal via IntersectionObserver
+│  │  └─ usePointerGlow.ts   # pointer → CSS vars (cursor glow / ASCII field)
 │  ├─ lib/site.ts            # ← all editable links & config live here
 │  ├─ index.css              # design tokens (Tailwind v4 @theme) + utilities
 │  └─ App.tsx                # page composition
 └─ index.html                # SEO / meta / fonts
 ```
 
-## 🔧 What to replace (placeholders)
+## What to Replace (Placeholders)
 
 Everything you need to personalize is centralized. Search the codebase for **`REPLACE_WITH_`** to find every spot.
 
 | Placeholder | Where | What to put |
 | --- | --- | --- |
-| `REPLACE_WITH_GITHUB_URL` | `src/lib/site.ts`, `README.md` | Your public GitHub repo URL |
+| `REPLACE_WITH_GITHUB_URL` | `src/lib/site.ts`, `README.md` | The Stillpoint app's public GitHub repo URL |
 | `REPLACE_WITH_GITHUB_RELEASE_URL` | `src/lib/site.ts` (`RELEASES_URL`, `DOWNLOADS.*`) | GitHub Releases page + per-platform asset links (`.exe`, `.dmg`, `.AppImage`) |
 | `REPLACE_WITH_CONTACT_EMAIL` | `src/lib/site.ts` | Optional contact email |
 | `APP_VERSION` | `src/lib/site.ts` | Current release version label (e.g. `v1.0.0`) |
-| `REPLACE_WITH_SITE_URL` | `index.html` | The site's public URL (used by canonical + OG/Twitter tags) |
+| `DEVELOPER` | `src/lib/site.ts` | Developer name + portfolio + GitHub (pre-filled for Anahat Mudgal) |
+| `REPLACE_WITH_SITE_URL` | `index.html` | The site's public URL (canonical + OG/Twitter tags) |
 | `og-image.png` | `public/` | A 1200×630 social share image (referenced by OG/Twitter meta) |
 
-### 🖼 Adding real screenshots
+### Adding / updating screenshots
 
-1. Drop your images into **`public/screenshots/`** (e.g. `dashboard.png`, `focus.png`, `analytics.png`).
-2. In the relevant component, pass the path to `<ScreenshotFrame>`:
+1. Drop images into **`public/screenshots/`**.
+2. Pass the path to the matching `<ScreenshotFrame>`:
 
    ```tsx
-   // Before (labelled placeholder):
-   <ScreenshotFrame label="Dashboard" ratio="16 / 11" />
-
-   // After (real image):
    <ScreenshotFrame
-     label="Dashboard"
-     src="/screenshots/dashboard.png"
-     alt="Stillpoint dashboard showing the live posture score and skeleton overlay"
-     ratio="16 / 11"
+     label="Analytics"
+     src="/screenshots/Stillpoint-Screenshot_Analytics.png"
+     alt="Stillpoint analytics with the switchable trend chart"
+     ratio="16 / 10"
    />
    ```
 
-   Screenshot placeholders live in: `Hero.tsx` (Dashboard) and `Features.tsx` (Focus, Analytics). The placeholder automatically disappears once `src` is provided.
+   Current wiring: **Hero** → camera/posture monitor; **Features** → Focus, Wellness, Settings. The **Analytics** card is still a labelled placeholder until that screenshot is added.
 
-## 🌐 Deploying
+## Deploying
 
 The build output in `/dist` is fully static. Pick any host:
 
@@ -105,19 +129,20 @@ The build output in `/dist` is fully static. Pick any host:
 - No environment variables needed. Leave `base` as `'/'` in `vite.config.ts`.
 
 ### GitHub Pages
-- For a **project site** (`username.github.io/your-repo`), set `base: '/your-repo/'` in `vite.config.ts`, then deploy the `dist` folder (e.g. via GitHub Actions or the `gh-pages` branch).
+- For a **project site** (`username.github.io/your-repo`), set `base: '/your-repo/'` in `vite.config.ts`, then deploy `dist` (via GitHub Actions or the `gh-pages` branch).
 - For a **user/organization site** or a **custom domain**, keep `base: '/'`.
-- GitHub Pages note: add an empty `.nojekyll` file to `dist` (or your Pages action) so asset folders starting with `_` are served correctly.
+- Add an empty `.nojekyll` file to `dist` so asset folders starting with `_` are served correctly.
 
-## 🛠 Tech notes
+## Author
 
-- **Tailwind CSS v4** via `@tailwindcss/vite` — design tokens are defined CSS-first in `src/index.css` under `@theme` (colors, fonts, and the `--radius: 0` that enforces sharp corners).
-- **Fonts:** Plus Jakarta Sans (display/body) + JetBrains Mono (technical labels), loaded from Google Fonts in `index.html`.
-- **React Compiler** is enabled (via the Vite Babel preset) for automatic memoization.
+**Anahat Mudgal**
 
-## 📄 License
+- Website: [anahatmudgal.com](https://anahatmudgal.com)
+- GitHub: [@AnahatM](https://github.com/anahatm)
 
-Add your license of choice (the Stillpoint app is free & open-source), then reference it here.
+## License
+
+This project is open source and available under the MIT License. Add a `LICENSE` file to formalize it.
 
 ---
 

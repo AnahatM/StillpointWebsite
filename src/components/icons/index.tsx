@@ -196,6 +196,40 @@ export const LinuxIcon = (p: IconProps) => (
   </svg>
 )
 
+/** Globe / external site */
+export const GlobeIcon = (p: IconProps) => (
+  <Base {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M3 12h18" />
+    <path d="M12 3c2.5 2.4 3.8 5.6 3.8 9S14.5 18.6 12 21c-2.5-2.4-3.8-5.6-3.8-9S9.5 5.4 12 3z" />
+  </Base>
+)
+
+/** Star (open-source / GitHub) */
+export const StarIcon = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 17l-5.4 2.7 1.2-6.1L3.3 9.4l6.1-.8L12 3z" />
+  </Base>
+)
+
+/** Branch / fork */
+export const ForkIcon = (p: IconProps) => (
+  <Base {...p}>
+    <circle cx="6" cy="5" r="2.2" />
+    <circle cx="18" cy="5" r="2.2" />
+    <circle cx="12" cy="19" r="2.2" />
+    <path d="M6 7.2v3c0 2 1.5 3 3 3h6c1.5 0 3-1 3-3v-3" />
+    <path d="M12 13.5v3.3" />
+  </Base>
+)
+
+/** Heart (made with care) */
+export const HeartIcon = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M12 20S4 14.5 4 8.8A4.2 4.2 0 0 1 12 6.6 4.2 4.2 0 0 1 20 8.8C20 14.5 12 20 12 20z" />
+  </Base>
+)
+
 /** Plus/minus chevron for FAQ */
 export const ChevronIcon = (p: IconProps) => (
   <Base {...p}>

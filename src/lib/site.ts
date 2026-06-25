@@ -14,6 +14,13 @@ export const RELEASES_URL = 'REPLACE_WITH_GITHUB_RELEASE_URL'
 /** Optional contact address shown in the footer. */
 export const CONTACT_EMAIL = 'REPLACE_WITH_CONTACT_EMAIL'
 
+/** Developer details — shown in the "Built by" section and footer. */
+export const DEVELOPER = {
+  name: 'Anahat Mudgal',
+  portfolio: 'https://anahatmudgal.com',
+  github: 'https://github.com/AnahatM',
+} as const
+
 /** Per-platform download links. Point these at specific release assets. */
 export const DOWNLOADS = {
   windows: 'REPLACE_WITH_GITHUB_RELEASE_URL', // Stillpoint-Setup-x.y.z.exe

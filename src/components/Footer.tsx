@@ -1,12 +1,13 @@
 import { Logo } from './ui/Logo'
 import { GithubIcon } from './icons'
-import { GITHUB_URL } from '../lib/site'
+import { GITHUB_URL, DEVELOPER } from '../lib/site'
 
 const FOOTER_LINKS = [
   { label: 'Features', href: '#features' },
   { label: 'How it works', href: '#how-it-works' },
   { label: 'Privacy', href: '#privacy' },
   { label: 'FAQ', href: '#faq' },
+  { label: 'Open source', href: '#open-source' },
   { label: 'Download', href: '#download' },
 ]
 
@@ -49,11 +50,19 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-line pt-6 sm:flex-row sm:items-center">
           <p className="font-mono text-[11px] uppercase tracking-wider text-ink-500">
-            © {year} Stillpoint · Free &amp; open-source
+            © {year} Stillpoint · Free &amp; open source
           </p>
           <p className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-ink-500">
             <span className="h-2 w-2 bg-teal-400" aria-hidden="true" />
-            Made with on-device AI
+            Made with on-device AI by{' '}
+            <a
+              href={DEVELOPER.portfolio}
+              target="_blank"
+              rel="noreferrer"
+              className="text-ink-300 underline-offset-2 hover:text-teal-300 hover:underline"
+            >
+              {DEVELOPER.name}
+            </a>
           </p>
         </div>
       </div>

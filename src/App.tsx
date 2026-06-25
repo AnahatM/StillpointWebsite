@@ -6,6 +6,7 @@ import { HowItWorks } from './components/HowItWorks'
 import { Privacy } from './components/Privacy'
 import { Download } from './components/Download'
 import { FAQ } from './components/FAQ'
+import { OpenSource } from './components/OpenSource'
 import { Footer } from './components/Footer'
 
 /** Single-page Stillpoint marketing site. */
@@ -30,6 +31,7 @@ function App() {
         <Privacy />
         <Download />
         <FAQ />
+        <OpenSource />
       </main>
 
       <Footer />

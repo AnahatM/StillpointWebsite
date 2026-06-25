@@ -60,8 +60,8 @@ export function PostureSpotlight() {
           <Reveal>
             <div className="viewfinder relative border border-line-strong bg-navy-850">
               <div className="grid gap-px bg-line sm:grid-cols-[1.4fr_1fr]">
-                {/* Camera frame */}
-                <div className="relative aspect-[4/3] bg-navy-900">
+                {/* Camera frame — overflow-hidden keeps the scan line contained */}
+                <div className="relative aspect-[4/3] overflow-hidden bg-navy-900">
                   <div className="bg-grid absolute inset-0 opacity-40" aria-hidden="true" />
                   <SkeletonOverlay />
                 </div>

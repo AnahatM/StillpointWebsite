@@ -18,12 +18,12 @@ export function SkeletonOverlay({ className = '' }: { className?: string }) {
 
   return (
     <div className={`pointer-events-none absolute inset-0 ${className}`} aria-hidden="true">
-      {/* Scan line */}
+      {/* Scan line — sweeps the full height of its container and loops */}
       <div
-        className="absolute inset-x-0 top-0 h-16"
+        className="absolute inset-x-0 h-16"
         style={{
           background: 'linear-gradient(to bottom, transparent, rgba(70,199,182,0.22), transparent)',
-          animation: 'scan 4.5s var(--ease-out-expo, ease) infinite',
+          animation: 'scan-sweep 4.5s var(--ease-out-expo, ease) infinite',
         }}
       />
 

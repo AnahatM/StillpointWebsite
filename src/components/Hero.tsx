@@ -1,24 +1,31 @@
 import { ButtonLink, Chip } from './ui/primitives'
 import { ScreenshotFrame } from './ui/ScreenshotFrame'
+import { AsciiBackdrop } from './ui/AsciiBackdrop'
+import { CursorGlow } from './ui/CursorGlow'
 import { DownloadIcon, GithubIcon, ArrowIcon } from './icons'
 import { GITHUB_URL } from '../lib/site'
 
 /**
  * Hero: headline, value prop, primary/secondary CTAs, trust chips, and a large
- * framed dashboard mockup with the live skeleton overlay layered on top.
+ * framed dashboard mockup with floating stat readouts. The background carries a
+ * pointer-reactive ASCII field and a cursor-following glow.
  */
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
-      {/* Atmospheric background: blueprint grid + teal glow */}
-      <div className="bg-grid bg-grid-fade pointer-events-none absolute inset-0 -z-10 opacity-60" aria-hidden="true" />
+      {/* Atmospheric, pointer-reactive background */}
+      <div className="bg-grid-fade pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+        <div className="bg-grid absolute inset-0 opacity-60" />
+        <AsciiBackdrop />
+        <CursorGlow />
+      </div>
       <div className="glow pointer-events-none absolute -top-40 left-1/2 -z-10 h-[640px] w-[900px] -translate-x-1/2" aria-hidden="true" />
 
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.05fr_1fr] lg:gap-10">
         {/* Copy column */}
         <div>
           <div className="rise" style={{ animationDelay: '0.05s' }}>
-            <Chip>100% on-device · no cloud</Chip>
+            <Chip>100% on-device · free &amp; open source</Chip>
           </div>
 
           <h1
@@ -53,6 +60,7 @@ export function Hero() {
           <div className="rise mt-9 flex flex-wrap gap-2.5" style={{ animationDelay: '0.36s' }}>
             <Chip>100% local</Chip>
             <Chip>No sign-up</Chip>
+            <Chip>Open source</Chip>
             <Chip>Windows · macOS · Linux</Chip>
           </div>
         </div>
@@ -69,11 +77,20 @@ export function Hero() {
             />
           </div>
 
-          {/* Floating privacy badge — always true, reinforces the core message */}
-          <div className="absolute -bottom-5 -left-4 hidden items-center gap-2.5 border border-line-strong bg-navy-800/95 px-4 py-3 backdrop-blur-sm sm:flex">
-            <span className="h-2.5 w-2.5 animate-blink bg-teal-400" aria-hidden="true" />
-            <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-300">
-              on-device · 0 uploads
+          {/* Floating posture-score readout */}
+          <div className="absolute -bottom-6 -left-4 hidden border border-line-strong bg-navy-800/95 px-4 py-3 backdrop-blur-sm sm:block">
+            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-500">posture score</p>
+            <p className="mt-1 flex items-baseline gap-1">
+              <span className="text-3xl font-extrabold text-teal-300">92</span>
+              <span className="font-mono text-xs text-ink-400">/ 100</span>
+            </p>
+          </div>
+
+          {/* Floating streak readout */}
+          <div className="absolute -right-3 top-8 hidden border border-line-strong bg-navy-800/95 px-4 py-3 backdrop-blur-sm sm:block">
+            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-500">good streak</p>
+            <p className="mt-1 text-xl font-bold text-ink-100">
+              48<span className="ml-1 font-mono text-xs font-normal text-ink-400">min</span>
             </p>
           </div>
         </div>
