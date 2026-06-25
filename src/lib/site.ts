@@ -12,9 +12,6 @@ export const GITHUB_URL = 'https://github.com/AnahatM/Stillpoint'
 /** GitHub Releases page (the "all downloads" link). */
 export const RELEASES_URL = 'https://github.com/AnahatM/Stillpoint/releases'
 
-/** Optional contact address shown in the footer. */
-export const CONTACT_EMAIL = 'REPLACE_WITH_CONTACT_EMAIL'
-
 /** Developer details — shown in the "Built by" section and footer. */
 export const DEVELOPER = {
   name: 'Anahat Mudgal',

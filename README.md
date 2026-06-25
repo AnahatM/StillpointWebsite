@@ -10,9 +10,9 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38bdf8?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](#license)
 [![Portfolio](https://img.shields.io/badge/Portfolio-anahatmudgal.com-796eb3?style=flat-square&logo=googlechrome&logoColor=white)](https://anahatmudgal.com)
-[![GitHub](https://img.shields.io/badge/GitHub-AnahatM-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/anahatm)
+[![GitHub](https://img.shields.io/badge/GitHub-AnahatM-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/AnahatM)
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Stillpoint-46c7b6?style=for-the-badge&logo=vercel&logoColor=white)](REPLACE_WITH_SITE_URL)
+[![Visit Site](https://img.shields.io/badge/Visit_Site-stillpoint.anahatmudgal.com-46c7b6?style=for-the-badge&logo=vercel&logoColor=white)](https://stillpoint.anahatmudgal.com/)
 [![Download for Windows](https://img.shields.io/badge/Download_for_Windows-GitHub_Releases-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AnahatM/Stillpoint/releases)
 
 </div>
@@ -94,7 +94,7 @@ npm run lint     # run ESLint
 **Anahat Mudgal**
 
 - Website: [anahatmudgal.com](https://anahatmudgal.com)
-- GitHub: [@AnahatM](https://github.com/anahatm)
+- GitHub: [@AnahatM](https://github.com/AnahatM)
 
 ## License
 
