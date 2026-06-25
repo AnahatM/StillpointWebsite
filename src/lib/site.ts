@@ -24,12 +24,12 @@ export const DEVELOPER = {
 } as const
 
 /**
- * Per-platform download links. These point at the Releases page for now;
- * replace each with the specific asset URL once a build is published.
+ * Download links. Only Windows ships today; this points at the Releases page
+ * for now — replace it with the specific asset URL once a build is published.
+ * (macOS is shown on the site as a disabled/“coming later” card.)
  */
 export const DOWNLOADS = {
   windows: 'https://github.com/AnahatM/Stillpoint/releases', // Stillpoint-Setup-x.y.z.exe
-  macos: 'https://github.com/AnahatM/Stillpoint/releases', //   Stillpoint-x.y.z.dmg
 } as const
 
 /** Current version label shown on the download cards. */

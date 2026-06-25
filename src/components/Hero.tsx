@@ -61,7 +61,7 @@ export function Hero() {
             <Chip>100% local</Chip>
             <Chip>No sign-up</Chip>
             <Chip>Open source</Chip>
-            <Chip>Windows · macOS</Chip>
+            <Chip>Windows</Chip>
           </div>
         </div>
 

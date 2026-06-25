@@ -4,7 +4,17 @@ import { DotField } from './ui/DotField'
 import { WindowsIcon, AppleIcon, DownloadIcon, GithubIcon } from './icons'
 import { DOWNLOADS, RELEASES_URL, APP_VERSION } from '../lib/site'
 
-const PLATFORMS = [
+interface Platform {
+  name: string
+  icon: typeof WindowsIcon
+  file: string
+  req: string
+  href?: string
+  /** When true the card renders greyed out and non-interactive. */
+  disabled?: boolean
+}
+
+const PLATFORMS: Platform[] = [
   {
     name: 'Windows',
     icon: WindowsIcon,
@@ -16,8 +26,8 @@ const PLATFORMS = [
     name: 'macOS',
     icon: AppleIcon,
     file: '.dmg',
-    req: 'macOS 12 Monterey or newer',
-    href: DOWNLOADS.macos,
+    req: 'Not available yet',
+    disabled: true,
   },
 ]
 
@@ -39,32 +49,55 @@ export function Download() {
               Get Stillpoint for your desktop.
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-lg text-ink-400">
-              Free and open-source. Pick your platform — current build{' '}
-              <span className="font-mono text-teal-300">{APP_VERSION}</span>.
+              Free and open-source — available for Windows, current build{' '}
+              <span className="font-mono text-teal-300">{APP_VERSION}</span>. A macOS
+              build isn&rsquo;t available yet.
             </p>
           </div>
         </Reveal>
 
         <div className="mx-auto mt-14 grid max-w-3xl gap-px bg-line sm:grid-cols-2">
-          {PLATFORMS.map((p, i) => (
-            <Reveal key={p.name} delay={i * 80}>
-              <div className="group flex h-full flex-col items-center bg-navy-850 p-8 text-center transition-colors duration-300 hover:bg-navy-800">
-                <span className="flex h-16 w-16 items-center justify-center border border-line-strong bg-navy-800 text-ink-100 transition-colors duration-300 group-hover:border-teal-400 group-hover:text-teal-300">
-                  <p.icon className="h-8 w-8" />
-                </span>
-                <h3 className="mt-5 text-xl font-bold text-ink-100">{p.name}</h3>
-                <p className="mt-1 font-mono text-[11px] uppercase tracking-wider text-ink-500">{p.file}</p>
-                <p className="mt-4 text-sm text-ink-400">{p.req}</p>
-                <a
-                  href={p.href}
-                  className="mt-7 inline-flex w-full items-center justify-center gap-2 bg-teal-400 px-5 py-3 text-sm font-semibold text-navy-950 transition-all duration-200 hover:bg-teal-300 hover:shadow-[0_0_30px_-4px_rgba(70,199,182,0.6)]"
-                >
-                  <DownloadIcon className="h-4 w-4" />
-                  Download for {p.name}
-                </a>
-              </div>
-            </Reveal>
-          ))}
+          {PLATFORMS.map((p, i) =>
+            p.disabled ? (
+              <Reveal key={p.name} delay={i * 80}>
+                <div className="relative flex h-full flex-col items-center bg-navy-850/60 p-8 text-center opacity-60">
+                  <span className="absolute right-3 top-3 border border-line bg-navy-800 px-2 py-0.5 font-mono text-[9px] uppercase tracking-wider text-ink-500">
+                    Coming later
+                  </span>
+                  <span className="flex h-16 w-16 items-center justify-center border border-line bg-navy-800 text-ink-500">
+                    <p.icon className="h-8 w-8" />
+                  </span>
+                  <h3 className="mt-5 text-xl font-bold text-ink-400">{p.name}</h3>
+                  <p className="mt-1 font-mono text-[11px] uppercase tracking-wider text-ink-500">{p.file}</p>
+                  <p className="mt-4 text-sm text-ink-500">{p.req}</p>
+                  <span
+                    aria-disabled="true"
+                    className="mt-7 inline-flex w-full cursor-not-allowed items-center justify-center gap-2 border border-line bg-navy-800 px-5 py-3 text-sm font-semibold text-ink-500"
+                  >
+                    Not available
+                  </span>
+                </div>
+              </Reveal>
+            ) : (
+              <Reveal key={p.name} delay={i * 80}>
+                <div className="group flex h-full flex-col items-center bg-navy-850 p-8 text-center transition-colors duration-300 hover:bg-navy-800">
+                  <span className="flex h-16 w-16 items-center justify-center border border-line-strong bg-navy-800 text-ink-100 transition-colors duration-300 group-hover:border-teal-400 group-hover:text-teal-300">
+                    <p.icon className="h-8 w-8" />
+                  </span>
+                  <h3 className="mt-5 text-xl font-bold text-ink-100">{p.name}</h3>
+                  <p className="mt-1 font-mono text-[11px] uppercase tracking-wider text-ink-500">{p.file}</p>
+                  <p className="mt-4 text-sm text-ink-400">{p.req}</p>
+                  <a
+                    href={p.href}
+                    className="mt-7 inline-flex w-full items-center justify-center gap-2 bg-teal-400 px-5 py-3 text-sm font-semibold text-navy-950 transition-all duration-200 hover:bg-teal-300 hover:shadow-[0_0_30px_-4px_rgba(70,199,182,0.6)]"
+                  >
+                    <DownloadIcon className="h-4 w-4" />
+                    Download for {p.name}
+                  </a>
+                </div>
+              </Reveal>
+            ),
+          )}
         </div>
 
         <Reveal>
@@ -89,7 +122,7 @@ export function Download() {
                 System requirements
               </h3>
               <ul className="mt-4 space-y-2.5 text-sm text-ink-300">
-                <li>· Windows 10/11 (64-bit) or macOS 12 Monterey and newer</li>
+                <li>· Windows 10/11 (64-bit) — a macOS build isn't available yet</li>
                 <li>· A built-in or external webcam</li>
                 <li>· No dedicated GPU required — inference runs on the CPU</li>
                 <li>· Works fully offline once installed</li>
@@ -102,17 +135,13 @@ export function Download() {
                 First-run security prompt
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-ink-400">
-                Current builds are <span className="text-ink-200">unsigned and not notarized</span>,
-                so your OS may warn you the first time you launch:
+                The current build is <span className="text-ink-200">unsigned</span>, so Windows
+                SmartScreen may warn you the first time you launch:
               </p>
               <ul className="mt-3 space-y-2 text-sm text-ink-300">
                 <li>
                   <span className="font-mono text-teal-300">Windows</span> — click
                   &ldquo;More info&rdquo; → &ldquo;Run anyway&rdquo;.
-                </li>
-                <li>
-                  <span className="font-mono text-teal-300">macOS</span> — right-click the app →
-                  &ldquo;Open&rdquo;, then confirm.
                 </li>
               </ul>
             </div>

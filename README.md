@@ -2,7 +2,7 @@
 
 # Stillpoint — Landing Page
 
-**The marketing site for [Stillpoint](REPLACE_WITH_GITHUB_URL) — a local-first desktop app that coaches your posture in real time, with nothing ever leaving your device.**
+**The marketing site for [Stillpoint](https://github.com/AnahatM/Stillpoint) — a local-first desktop app that coaches your posture in real time, with nothing ever leaving your device.**
 
 [![Vite](https://img.shields.io/badge/Vite-8-646cff?style=flat-square&logo=vite&logoColor=white)](https://vite.dev)
 [![React](https://img.shields.io/badge/React-19-61dafb?style=flat-square&logo=react&logoColor=black)](https://react.dev)
@@ -13,7 +13,7 @@
 [![GitHub](https://img.shields.io/badge/GitHub-AnahatM-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/anahatm)
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-Stillpoint-46c7b6?style=for-the-badge&logo=vercel&logoColor=white)](REPLACE_WITH_SITE_URL)
-[![Download App](https://img.shields.io/badge/Download_the_App-GitHub_Releases-181717?style=for-the-badge&logo=github&logoColor=white)](REPLACE_WITH_GITHUB_RELEASE_URL)
+[![Download for Windows](https://img.shields.io/badge/Download_for_Windows-GitHub_Releases-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AnahatM/Stillpoint/releases)
 
 </div>
 
@@ -91,12 +91,11 @@ npm run lint     # run ESLint
 
 ## What to Replace (Placeholders)
 
-Everything you need to personalize is centralized. Search the codebase for **`REPLACE_WITH_`** to find every spot.
+The GitHub repo/app URLs are already filled in (`AnahatM/Stillpoint`). Search the codebase for **`REPLACE_WITH_`** to find what's left.
 
 | Placeholder | Where | What to put |
 | --- | --- | --- |
-| `REPLACE_WITH_GITHUB_URL` | `src/lib/site.ts`, `README.md` | The Stillpoint app's public GitHub repo URL |
-| `REPLACE_WITH_GITHUB_RELEASE_URL` | `src/lib/site.ts` (`RELEASES_URL`, `DOWNLOADS.*`) | GitHub Releases page + per-platform asset links (`.exe`, `.dmg`, `.AppImage`) |
+| `RELEASES_URL` / `DOWNLOADS.windows` | `src/lib/site.ts` | GitHub Releases page + the Windows `.exe` asset link. Stillpoint currently ships for **Windows only**; the macOS card is shown disabled/"coming later". |
 | `REPLACE_WITH_CONTACT_EMAIL` | `src/lib/site.ts` | Optional contact email |
 | `APP_VERSION` | `src/lib/site.ts` | Current release version label (e.g. `v1.0.0`) |
 | `DEVELOPER` | `src/lib/site.ts` | Developer name + portfolio + GitHub (pre-filled for Anahat Mudgal) |

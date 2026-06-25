@@ -34,11 +34,11 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
   },
   {
     q: 'Which platforms are supported?',
-    a: 'Windows 10/11 and macOS 12 or newer — shipped as an .exe installer and a .dmg respectively. (Stillpoint is open source, so it can also be built from source on other platforms.)',
+    a: 'Right now Stillpoint ships for Windows 10/11 as an .exe installer. A macOS build isn’t available yet — but since Stillpoint is open source, it can be built from source on macOS or Linux.',
   },
   {
     q: 'Why does my OS show a security warning on first run?',
-    a: 'Current builds are unsigned and not notarized, so Windows SmartScreen or macOS Gatekeeper may flag them once. On Windows choose “More info → Run anyway”; on macOS right-click the app and choose “Open”.',
+    a: 'The current build is unsigned, so Windows SmartScreen may flag it once. Choose “More info → Run anyway” to continue.',
   },
 ]
 
